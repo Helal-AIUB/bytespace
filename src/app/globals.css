@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors derived from the Figma image */
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(222.2 84% 4.9%);
+  
+  /* The vibrant blue background */
+  --color-primary: hsl(228 96% 47%); 
+  --color-primary-foreground: hsl(0 0% 100%);
+  
+  /* The lime/yellow accent */
+  --color-accent: hsl(75 100% 50%);
+  --color-accent-foreground: hsl(222.2 47.4% 11.2%);
+  
+  --color-muted: hsl(210 40% 96.1%);
+  --color-muted-foreground: hsl(215.4 16.3% 46.9%);
+
+  --color-border: hsl(214.3 31.8% 91.4%);
+  
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+}
+
+@layer base {
+  *, ::after, ::before {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  /* Creates the subtle white grid overlay seen in the design */
+  .bg-grid-pattern {
+    background-size: 80px 80px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  }
+}
