@@ -1,7 +1,10 @@
 import { Navbar } from "../components/navigation/Navbar";
 import { HeroSection } from "../components/home/HeroSection";
 import { PartnerLogos } from "../components/home/PartnerLogos";
-import { CourseDiscovery } from "../components/home/CourseDiscovery"
+import { LearningPaths } from "../components/home/LearningPaths";
+import { CourseDiscovery } from "../components/home/CourseDiscovery";
+import { CourseManagement } from "../components/home/CourseManagement";
+import { ProfessionalGrowth } from "../components/home/ProfessionalGrowth";
 
 export default function Home() {
   return (
@@ -10,6 +13,9 @@ export default function Home() {
       <HeroSection />
       <PartnerLogos />
       <CourseDiscovery />
+      <LearningPaths />
+      <ProfessionalGrowth />
+      <CourseManagement />
     </main>
   );
 }
