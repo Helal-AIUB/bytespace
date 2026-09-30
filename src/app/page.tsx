@@ -1,4 +1,5 @@
 import { Navbar } from "../components/navigation/Navbar";
+import { Footer } from "../components/navigation/Footer";
 import { HeroSection } from "../components/home/HeroSection";
 import { PartnerLogos } from "../components/home/PartnerLogos";
 import { LearningPaths } from "../components/home/LearningPaths";
@@ -20,6 +21,7 @@ export default function Home() {
       <CourseManagement />
       <CreatorSection />
       <CommunityTestimonials />
+      <Footer />
     </main>
   );
 }
