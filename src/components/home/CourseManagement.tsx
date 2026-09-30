@@ -36,25 +36,29 @@ export function CourseManagement() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
-          
           {/* === Left Content (Interactive Visuals) === */}
           <div className="relative w-full h-[550px] md:h-[650px] flex items-end justify-center lg:justify-start order-2 lg:order-1 mt-10 lg:mt-0">
-            
             {/* Top Blue Card (Total Revenue) - Moved behind the image with z-10 */}
             <motion.div
               style={{ y: floatY2 }}
               className="absolute top-[8%] md:top-[10%] left-0 md:left-4 z-10 bg-[#0c40e8] p-4 rounded-[20px] shadow-2xl w-44 md:w-52 border border-blue-500/20 hover:scale-105 transition-transform duration-300 cursor-pointer"
             >
-              <h4 className="text-[13px] md:text-sm text-blue-100 font-medium leading-tight">Total Revenue</h4>
-              <p className="text-[10px] md:text-xs text-blue-300 mb-2">July 1-28</p>
-              <p className="text-2xl md:text-3xl font-bold text-white mb-3">$120.29</p>
+              <h4 className="text-[13px] md:text-sm text-blue-100 font-medium leading-tight">
+                Total Revenue
+              </h4>
+              <p className="text-[10px] md:text-xs text-blue-300 mb-2">
+                July 1-28
+              </p>
+              <p className="text-2xl md:text-3xl font-bold text-white mb-3">
+                $120.29
+              </p>
               <div className="w-full h-1.5 bg-blue-800 rounded-full overflow-hidden">
-                <motion.div 
+                <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: "70%" }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.2, ease: "easeOut" }}
-                  className="h-full bg-[#bef264] rounded-full" 
+                  className="h-full bg-[#bef264] rounded-full"
                 />
               </div>
             </motion.div>
@@ -64,9 +68,13 @@ export function CourseManagement() {
               style={{ y: floatY1 }}
               className="absolute top-[35%] md:top-[38%] left-[-2%] md:left-0 z-10 bg-[#0c40e8] p-4 rounded-[20px] shadow-2xl w-36 md:w-44 border border-blue-500/20 hover:scale-105 transition-transform duration-300 cursor-pointer"
             >
-              <h4 className="text-[13px] md:text-sm text-blue-100 font-medium leading-tight">Year to Date</h4>
+              <h4 className="text-[13px] md:text-sm text-blue-100 font-medium leading-tight">
+                Year to Date
+              </h4>
               <p className="text-[10px] md:text-xs text-blue-300 mb-2">2023</p>
-              <p className="text-xl md:text-2xl font-bold text-white mb-3">$1,200.38</p>
+              <p className="text-xl md:text-2xl font-bold text-white mb-3">
+                $1,200.38
+              </p>
               <div className="bg-[#bef264] text-[#0F172A] text-[10px] md:text-[11px] font-bold px-2.5 py-1 rounded-full inline-block shadow-sm">
                 +125
               </div>
@@ -98,24 +106,24 @@ export function CourseManagement() {
                 src="/hero/hero2.png"
                 alt="Instructor managing courses"
                 fill
+                sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 600px"
                 className="object-contain object-bottom drop-shadow-2xl"
                 priority
               />
             </motion.div>
 
-            {/* The Squiggly Icon - Moved in front of the image (z-30) and positioned top right */}
             <motion.div
-  style={{ y: floatY2 }}
-  // Ekhane ekdom seshe 'rotate-[25deg]' add kora hoyeche shape take ghurate
-  className="absolute top-[27%] right-[-3%] md:right-[10%] z-30 w-28 h-28 md:w-36 md:h-36 rotate-[25deg]"
->
-  <Image
-    src="/icon/icon1.jpg"
-    alt="Decorative Shape"
-    fill
-    className="object-contain mix-blend-multiply drop-shadow-xl"
-  />
-</motion.div>
+              style={{ y: floatY2 }}
+              className="absolute top-[27%] right-[-3%] md:right-[10%] z-30 w-28 h-28 md:w-36 md:h-36 rotate-[25deg]"
+            >
+              <Image
+                src="/icon/icon1.jpg"
+                alt="Decorative Shape"
+                fill
+                sizes="(max-width: 768px) 120px, 150px"
+                className="object-contain mix-blend-multiply drop-shadow-xl"
+              />
+            </motion.div>
 
             {/* Floating Happy Students Card - Placed in front with z-30 */}
             <motion.div
@@ -123,18 +131,28 @@ export function CourseManagement() {
               className="absolute bottom-[10%] md:bottom-[15%] right-[-5%] md:-right-4 z-30 bg-white p-3.5 md:p-4 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.12)] w-56 md:w-64 border border-gray-100 hover:scale-105 transition-transform duration-300 cursor-pointer"
             >
               <div className="text-left mb-2.5">
-                <h4 className="font-semibold text-[13px] md:text-sm text-gray-800">Happy Students</h4>
+                <h4 className="font-semibold text-[13px] md:text-sm text-gray-800">
+                  Happy Students
+                </h4>
                 <div className="flex items-center text-[11px] md:text-xs font-bold mt-0.5">
                   <span className="text-gray-900">4.5</span>
                   <span className="text-gray-400 ml-1 font-medium">(240)</span>
                   <Star className="w-3 h-3 text-[#FACC15] fill-[#FACC15] ml-1 -mt-0.5" />
                 </div>
               </div>
-              
+
               <div className="flex -space-x-2.5 md:-space-x-3">
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <div key={i} className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-white bg-slate-200 z-10 flex items-center justify-center overflow-hidden shadow-sm">
-                     <Image src={`https://i.pravatar.cc/100?img=${i + 20}`} alt="Avatar" width={32} height={32} />
+                  <div
+                    key={i}
+                    className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-white bg-slate-200 z-10 flex items-center justify-center overflow-hidden shadow-sm"
+                  >
+                    <Image
+                      src={`https://i.pravatar.cc/100?img=${i + 20}`}
+                      alt="Avatar"
+                      width={32}
+                      height={32}
+                    />
                   </div>
                 ))}
                 <div className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-white bg-[#bef264] z-10 flex items-center justify-center text-[9px] md:text-[10px] font-bold text-gray-900 shadow-sm">
@@ -158,13 +176,13 @@ export function CourseManagement() {
             </h2>
 
             <p className="text-base md:text-lg text-[#64748B] leading-relaxed mb-8 md:mb-10 font-normal">
-              ByteSpace supports individuals or entities in the creation, publication, 
-              and administration of educational courses.
+              ByteSpace supports individuals or entities in the creation,
+              publication, and administration of educational courses.
             </p>
 
             <ul className="flex flex-col gap-4 md:gap-5">
               {checkList.map((item, index) => (
-                <motion.li 
+                <motion.li
                   key={index}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -173,7 +191,10 @@ export function CourseManagement() {
                   className="flex items-center gap-3.5"
                 >
                   <div className="w-6 h-6 rounded-full bg-[#0c40e8] flex items-center justify-center shrink-0 shadow-md">
-                    <Check className="w-3.5 h-3.5 text-white" strokeWidth={3.5} />
+                    <Check
+                      className="w-3.5 h-3.5 text-white"
+                      strokeWidth={3.5}
+                    />
                   </div>
                   <span className="text-[15px] md:text-[17px] font-medium text-[#0F172A]">
                     {item}
@@ -182,7 +203,6 @@ export function CourseManagement() {
               ))}
             </ul>
           </motion.div>
-
         </div>
       </div>
     </section>

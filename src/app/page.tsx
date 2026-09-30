@@ -4,6 +4,7 @@ import { PartnerLogos } from "../components/home/PartnerLogos";
 import { LearningPaths } from "../components/home/LearningPaths";
 import { CourseDiscovery } from "../components/home/CourseDiscovery";
 import { CourseManagement } from "../components/home/CourseManagement";
+import { CreatorSection } from "../components/home/CreatorSection";
 import { ProfessionalGrowth } from "../components/home/ProfessionalGrowth";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <LearningPaths />
       <ProfessionalGrowth />
       <CourseManagement />
+      <CreatorSection />
     </main>
   );
 }
