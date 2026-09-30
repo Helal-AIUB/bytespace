@@ -275,7 +275,7 @@ export default function LoginPage() {
             <div className="bg-white w-full rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-gray-50">
               <div className="mb-8">
                 <span className="text-blue-600 font-bold text-[12px] uppercase tracking-wider">
-                  Secure Access
+                  Sign In
                 </span>
                 <h2 className="text-[32px] md:text-[36px] font-black text-[#0F172A] tracking-tight mt-1">
                   Welcome Back
