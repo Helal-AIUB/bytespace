@@ -6,6 +6,7 @@ import { CourseDiscovery } from "../components/home/CourseDiscovery";
 import { CourseManagement } from "../components/home/CourseManagement";
 import { CreatorSection } from "../components/home/CreatorSection";
 import { ProfessionalGrowth } from "../components/home/ProfessionalGrowth";
+import { CommunityTestimonials } from "../components/home/CommunityTestimonials";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <ProfessionalGrowth />
       <CourseManagement />
       <CreatorSection />
+      <CommunityTestimonials />
     </main>
   );
 }
