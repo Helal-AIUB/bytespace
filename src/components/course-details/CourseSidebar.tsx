@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { PlayCircle, Award, BookOpen, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { Course } from "../../data/coursesData";
@@ -56,7 +57,7 @@ export function CourseSidebar({ course }: { course: Course }) {
           <motion.button 
             whileHover={{ scale: 1.03, boxShadow: "0px 10px 25px rgba(217, 252, 54, 0.4)" }}
             whileTap={{ scale: 0.97 }}
-            className="w-full bg-[#d9fc36] text-[#0F172A] font-bold text-base py-4 rounded-full shadow-lg text-center transition-all"
+            className="w-full bg-[#d9fc36] text-[#0F172A] font-bold text-base py-4 rounded-full shadow-lg text-center transition-all cursor-pointer"
           >
             Enroll Now
           </motion.button>
@@ -86,19 +87,22 @@ export function CourseSidebar({ course }: { course: Course }) {
         </div>
 
         {/* Creator Profile */}
-        <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+        <div className="pt-6 border-t border-gray-100 flex items-center justify-between gap-2">
+          <div className="flex items-center gap-3 min-w-0">
             <div className="relative w-11 h-11 rounded-full overflow-hidden border border-gray-200 flex-shrink-0">
-              <Image src={course.creator.avatar} alt="Creator" fill className="object-cover" />
+              <Image src="/hero/creator.jpg" alt="PurePearl Studio" fill className="object-cover" />
             </div>
-            <div>
-              <h6 className="font-bold text-sm text-[#0F172A]">{course.creator.name}</h6>
-              <p className="text-xs text-gray-500 font-medium">{course.creator.role}</p>
+            <div className="min-w-0">
+              <h6 className="font-bold text-sm text-[#0F172A] truncate">PurePearl Studio</h6>
+              <p className="text-xs text-gray-500 font-medium truncate">Professional Creator</p>
             </div>
           </div>
-          <button className="text-xs font-bold text-blue-600 hover:underline flex-shrink-0">
+          <Link 
+            href="/creators/1" 
+            className="text-xs font-bold text-blue-600 hover:underline flex-shrink-0 cursor-pointer"
+          >
             View Profile
-          </button>
+          </Link>
         </div>
 
       </motion.div>
