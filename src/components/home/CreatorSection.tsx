@@ -10,7 +10,7 @@ const shapes = [
     id: 1,
     src: "/icon/icon1.jpg",
     className:
-      "top-[-5%] left-[-15%] md:top-[-45%] md:left-[-15%] w-48 h-48 md:w-64 md:h-64 -rotate-[120deg]",
+      "top-[-2%] left-[-5%] md:top-[-45%] md:left-[-15%] w-24 h-24 md:w-64 md:h-64 -rotate-[120deg]",
     duration: 6,
     reverse: false,
   },
@@ -20,7 +20,7 @@ const shapes = [
     id: 2,
     src: "/icon/icon3.jpg",
     className:
-      "top-[15%] left-[5%] md:top-[-20%] md:left-[10%] w-24 h-24 md:w-36 md:h-36 rotate-[50deg]",
+      "top-[10%] left-[2%] md:top-[-20%] md:left-[10%] w-16 h-16 md:w-36 md:h-36 rotate-[50deg]",
     duration: 5,
     reverse: true,
   },
@@ -30,7 +30,7 @@ const shapes = [
     id: 3,
     src: "/icon/icon5.jpg",
     className:
-      "bottom-[5%] left-[0%] md:bottom-[-10%] md:left-[-14%] w-32 h-32 md:w-48 md:h-48 rotate-[10deg]",
+      "bottom-[2%] left-[-5%] md:bottom-[-10%] md:left-[-14%] w-20 h-20 md:w-48 md:h-48 rotate-[10deg]",
     duration: 7,
     reverse: false,
   },
@@ -40,7 +40,7 @@ const shapes = [
     id: 4,
     src: "/icon/icon4.jpg",
     className:
-      "bottom-[-15%] left-[60%] md:bottom-[-66%] md:left-[2%] w-48 h-48 md:w-72 md:h-72 rotate-[-15deg]",
+      "bottom-[-5%] left-[65%] md:bottom-[-66%] md:left-[2%] w-24 h-24 md:w-72 md:h-72 rotate-[-15deg]",
     duration: 8,
     reverse: true,
   },
@@ -50,7 +50,7 @@ const shapes = [
     id: 5,
     src: "/icon/icon2.jpg",
     className:
-      "top-[15%] right-[10%] md:top-[-30%] md:right-[5%] w-28 h-28 md:w-40 md:h-40 rotate-[20deg]",
+      "top-[8%] right-[5%] md:top-[-30%] md:right-[5%] w-16 h-16 md:w-40 md:h-40 rotate-[20deg]",
     duration: 7,
     reverse: false,
   },
@@ -60,7 +60,7 @@ const shapes = [
     id: 6,
     src: "/icon/icon6.jpg",
     className:
-      "top-[20%] right-[-10%] md:top-[-15%] md:right-[-15%] w-40 h-56 md:w-64 md:h-80 rotate-[5deg]",
+      "top-[5%] right-[-8%] md:top-[-15%] md:right-[-15%] w-20 h-28 md:w-64 md:h-80 rotate-[5deg]",
     duration: 6,
     reverse: true,
   },
@@ -70,7 +70,7 @@ const shapes = [
     id: 7,
     src: "/icon/icon1.jpg",
     className:
-      "bottom-[50%] right-[-5%] md:bottom-[-55%] md:right-[5%] w-40 h-40 md:w-64 md:h-64 rotate-[-5deg]",
+      "bottom-[15%] right-[-5%] md:bottom-[-55%] md:right-[5%] w-20 h-20 md:w-64 md:h-64 rotate-[-5deg]",
     duration: 6,
     reverse: false,
   },
@@ -105,9 +105,9 @@ export function CreatorSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="px-6 md:px-12 mb-12 md:mb-14 w-full max-w-[900px]"
+            className="px-2 sm:px-6 md:px-12 mb-12 md:mb-14 w-full max-w-[900px]"
           >
-            <p className="text-white text-[15px] md:text-[17px] leading-[1.8] font-normal mx-auto drop-shadow-sm">
+            <p className="text-white/90 text-sm md:text-[17px] leading-[1.8] font-normal mx-auto drop-shadow-sm">
               Experience the collaboration of numerous creators and an expanding
               selection of courses. Register now and become a part of a
               community comprising over 10,000 local and international creators.
@@ -137,7 +137,7 @@ export function CreatorSection() {
           <motion.div
             key={shape.id}
             animate={{
-              y: shape.reverse ? [-15, 15, -15] : [15, -15, 15],
+              y: shape.reverse ? [-10, 10, -10] : [10, -10, 10],
             }}
             transition={{
               duration: shape.duration,
@@ -150,7 +150,7 @@ export function CreatorSection() {
               src={shape.src}
               alt="Decorative 3D shape"
               fill
-              sizes="(max-width: 768px) 200px, 350px"
+              sizes="(max-width: 768px) 150px, 350px"
               className="object-contain mix-blend-screen"
             />
           </motion.div>
