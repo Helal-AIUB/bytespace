@@ -1,36 +1,37 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion"; // Imported Variants for TypeScript fix
 
 const testimonials = [
   {
     id: 1,
     name: "Sarah M.",
     role: "Enthusiastic Learner",
-    image: "https://i.pravatar.cc/150?img=47", // Using high-quality placeholder matching the female avatar
-    avatarBg: "bg-[#FBBF24]", // Yellowish background like the design
+    image: "https://i.pravatar.cc/150?img=47",
+    avatarBg: "bg-[#FBBF24]",
     text: '"ByteSpace has transformed my approach to learning. The diverse range of courses and the quality of content provided by creators have exceeded my expectations. The platform truly fosters a sense of community and lifelong learning."',
   },
   {
     id: 2,
     name: "James L.",
     role: "Lifelong Learner",
-    image: "https://i.pravatar.cc/150?img=11", // Male avatar
-    avatarBg: "bg-[#334155]", // Dark slate background
+    image: "https://i.pravatar.cc/150?img=11",
+    avatarBg: "bg-[#334155]",
     text: '"I\'ve tried several online learning platforms, and ByteSpace stands out for its vibrant community and the variety of courses available. The easy navigation and engaging content make it a go-to platform for continuous skill development."',
   },
   {
     id: 3,
     name: "Alex B.",
     role: "Inspired Creator",
-    image: "https://i.pravatar.cc/150?img=68", // Male avatar
-    avatarBg: "bg-[#E2E8F0]", // Light gray background
+    image: "https://i.pravatar.cc/150?img=68",
+    avatarBg: "bg-[#E2E8F0]",
     text: '"As a creator, ByteSpace has been a game-changer for me. The Course Editor is user-friendly, and the support from the community is incredible. It\'s fulfilling to see my courses making a positive impact on learners globally."',
   },
 ];
 
-const containerVariants = {
+// Added type : Variants to fix the TypeScript error
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -40,7 +41,8 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+// Added type : Variants to fix the TypeScript error
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
     opacity: 1, 
@@ -99,12 +101,15 @@ export function CommunityTestimonials() {
             <motion.div
               key={testimonial.id}
               variants={cardVariants}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="bg-white rounded-3xl p-8 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-gray-50 flex flex-col h-full group transition-all"
+              whileHover={{ y: -8 }}
+              className="bg-white rounded-3xl p-8 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-gray-50 flex flex-col h-full group transition-all duration-300 cursor-default"
             >
               {/* Avatar & Info */}
               <div className="flex flex-col mb-6">
-                <div className={`w-14 h-14 rounded-full flex items-center justify-center overflow-hidden mb-5 ${testimonial.avatarBg}`}>
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  className={`w-14 h-14 rounded-full flex items-center justify-center overflow-hidden mb-5 ${testimonial.avatarBg} transition-transform duration-300 cursor-pointer`}
+                >
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
@@ -112,9 +117,9 @@ export function CommunityTestimonials() {
                     height={56}
                     className="object-cover w-full h-full"
                   />
-                </div>
+                </motion.div>
                 <div>
-                  <h4 className="text-lg font-bold text-[#0F172A] mb-1">
+                  <h4 className="text-lg font-bold text-[#0F172A] mb-1 group-hover:text-blue-600 transition-colors duration-300">
                     {testimonial.name}
                   </h4>
                   <p className="text-sm font-medium text-[#5B6BF9]">
