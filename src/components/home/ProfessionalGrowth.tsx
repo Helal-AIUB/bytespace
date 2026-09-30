@@ -49,10 +49,10 @@ export function ProfessionalGrowth() {
               need.
             </p>
 
-            {/* Stats Grid */}
-            <div className="flex items-center gap-12 md:gap-16">
+            {/* Stats Grid - Adjusted gap and flex-wrap for mobile */}
+            <div className="flex flex-wrap items-center gap-8 sm:gap-12 md:gap-16">
               <div className="flex flex-col gap-1">
-                <span className="text-4xl md:text-[42px] font-bold text-blue-600 tracking-tight">
+                <span className="text-[32px] sm:text-4xl md:text-[42px] font-bold text-blue-600 tracking-tight">
                   12K
                 </span>
                 <span className="text-sm font-medium text-gray-500">
@@ -60,7 +60,7 @@ export function ProfessionalGrowth() {
                 </span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-4xl md:text-[42px] font-bold text-blue-600 tracking-tight">
+                <span className="text-[32px] sm:text-4xl md:text-[42px] font-bold text-blue-600 tracking-tight">
                   70+
                 </span>
                 <span className="text-sm font-medium text-gray-500">
@@ -68,7 +68,7 @@ export function ProfessionalGrowth() {
                 </span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-4xl md:text-[42px] font-bold text-blue-600 tracking-tight">
+                <span className="text-[32px] sm:text-4xl md:text-[42px] font-bold text-blue-600 tracking-tight">
                   16
                 </span>
                 <span className="text-sm font-medium text-gray-500">
@@ -79,14 +79,15 @@ export function ProfessionalGrowth() {
           </motion.div>
 
           {/* === Right Content (Interactive Visuals) === */}
-          <div className="relative w-full h-[500px] md:h-[650px] flex items-end justify-center lg:justify-end mt-10 lg:mt-0">
+          {/* Adjusted wrapper height and max-width for small devices */}
+          <div className="relative w-full max-w-[380px] sm:max-w-none mx-auto h-[400px] sm:h-[500px] md:h-[650px] flex items-end justify-center lg:justify-end mt-10 lg:mt-0">
             
-            {/* Floating Mini Course Card - Shifted to the right */}
+            {/* Floating Mini Course Card - Scaled for mobile, original on PC */}
             <motion.div
               style={{ y: floatY2 }}
-              className="absolute top-[8%] md:top-[12%] left-4 md:left-8 lg:left-2 z-10 bg-white p-3 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] w-60 md:w-64 border border-gray-100 hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-pointer group"
+              className="absolute top-[5%] sm:top-[8%] md:top-[12%] -left-2 sm:left-4 md:left-8 lg:left-2 z-10 bg-white p-2.5 sm:p-3 rounded-xl sm:rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] w-[170px] sm:w-60 md:w-64 border border-gray-100 hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-pointer group"
             >
-              <div className="relative w-full h-32 md:h-36 rounded-xl overflow-hidden mb-3 bg-gray-100">
+              <div className="relative w-full h-24 sm:h-32 md:h-36 rounded-lg sm:rounded-xl overflow-hidden mb-2 sm:mb-3 bg-gray-100">
                 <Image
                   src="/courses/course1.jpg"
                   alt="Course Thumbnail"
@@ -95,35 +96,35 @@ export function ProfessionalGrowth() {
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <h4 className="font-bold text-[15px] text-gray-900 leading-tight mb-1 truncate">
+              <h4 className="font-bold text-[12px] sm:text-[15px] text-gray-900 leading-tight mb-1 truncate">
                 Learn Figma from Basic
               </h4>
-              <p className="text-[11px] text-blue-500 mb-3 truncate">
+              <p className="text-[9px] sm:text-[11px] text-blue-500 mb-2 sm:mb-3 truncate">
                 by purepearl studio
               </p>
 
-              <div className="flex items-center gap-1.5 mb-4">
-                <div className="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md">
-                  <Signal className="w-3 h-3 text-gray-500" />
-                  <span className="text-[11px] font-medium text-gray-600">
+              <div className="flex items-center gap-1.5 mb-3 sm:mb-4">
+                <div className="flex items-center gap-1 bg-gray-50 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md">
+                  <Signal className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-gray-500" />
+                  <span className="text-[9px] sm:text-[11px] font-medium text-gray-600">
                     Beginner
                   </span>
                 </div>
               </div>
 
               <div className="flex items-center gap-1">
-                <span className="text-base font-bold text-blue-600">$25</span>
-                <span className="text-[10px] text-gray-400">/lifetime</span>
+                <span className="text-sm sm:text-base font-bold text-blue-600">$25</span>
+                <span className="text-[8px] sm:text-[10px] text-gray-400">/lifetime</span>
               </div>
             </motion.div>
 
-            {/* The Main Student Image - Moved slightly up */}
+            {/* The Main Student Image - Responsive positioning and size */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="absolute bottom-16 md:bottom-24 -right-5 md:-right-16 lg:-right-20 w-[120%] md:w-[130%] h-[120%] md:h-[130%] z-20 pointer-events-none"
+              className="absolute bottom-0 sm:bottom-16 md:bottom-24 right-0 sm:-right-5 md:-right-16 lg:-right-20 w-[100%] sm:w-[120%] md:w-[130%] h-[100%] sm:h-[120%] md:h-[130%] z-20 pointer-events-none origin-bottom"
             >
               <Image
                 src="/hero/hero1.png"
@@ -134,10 +135,10 @@ export function ProfessionalGrowth() {
               />
             </motion.div>
 
-            {/* The Squiggly Icon - Moved up to align with progress card */}
+            {/* The Squiggly Icon - Responsive sizing */}
             <motion.div
               style={{ y: floatY1 }}
-              className="absolute top-[22%] md:top-[22%] -right-4 md:-right-18 z-40 w-32 h-32 md:w-44 md:h-44"
+              className="absolute top-[28%] sm:top-[22%] md:top-[22%] -right-2 sm:-right-4 md:-right-18 z-40 w-20 h-20 sm:w-32 sm:h-32 md:w-44 md:h-44"
             >
               <Image
                 src="/icon/icon1.jpg"
@@ -148,20 +149,20 @@ export function ProfessionalGrowth() {
               />
             </motion.div>
 
-            {/* Floating Progress Card - Moved slightly up */}
+            {/* Floating Progress Card - Responsive sizing and padding */}
             <motion.div
               style={{ y: floatY3 }}
-              className="absolute top-[42%] md:top-[40%] right-0 md:-right-12 z-30 bg-white p-4 md:p-5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.12)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.2)] w-52 md:w-60 border border-gray-50 hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-pointer"
+              className="absolute top-[45%] sm:top-[42%] md:top-[40%] -right-2 sm:right-0 md:-right-12 z-30 bg-white p-3 sm:p-4 md:p-5 rounded-xl sm:rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.12)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.2)] w-40 sm:w-52 md:w-60 border border-gray-50 hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-pointer"
             >
               <div className="flex items-center justify-between mb-1">
-                <h4 className="text-xs md:text-sm text-gray-500 font-medium">
+                <h4 className="text-[10px] sm:text-xs md:text-sm text-gray-500 font-medium">
                   Learning Progress
                 </h4>
               </div>
-              <p className="text-3xl md:text-[40px] font-black text-[#0F172A] mb-4">
+              <p className="text-2xl sm:text-3xl md:text-[40px] font-black text-[#0F172A] mb-2 sm:mb-4">
                 55%
               </p>
-              <div className="w-full h-2 md:h-2.5 bg-gray-100 rounded-full overflow-hidden">
+              <div className="w-full h-1.5 sm:h-2 md:h-2.5 bg-gray-100 rounded-full overflow-hidden">
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: "55%" }}
