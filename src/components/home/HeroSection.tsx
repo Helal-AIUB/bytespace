@@ -3,9 +3,13 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Search, Star } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export function HeroSection() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const router = useRouter();
+
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -16,6 +20,15 @@ export function HeroSection() {
   const y1 = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -80]);
   const y3 = useTransform(scrollYProgress, [0, 1], [0, 60]);
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/search?query=${encodeURIComponent(searchQuery.trim())}`);
+    } else {
+      router.push(`/search`);
+    }
+  };
 
   return (
     <section 
@@ -29,7 +42,6 @@ export function HeroSection() {
       
       {/* Top Left Green DNA/Squiggle (icon1.jpg) */}
       <motion.div style={{ y: y1 }} className="absolute top-10 left-[-15%] md:left-[-10%] xl:left-[-6%] z-0 hidden lg:block pointer-events-none">
-        {/* Removed scale to keep the original crystal clear thickness, adjusted rotation to point towards center */}
         <motion.div animate={{ rotate: [20, 10, 20] }} transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }} className="relative w-[220px] h-[300px] md:w-[280px] md:h-[360px]">
           <Image 
             src="/icon/icon1.jpg" 
@@ -131,13 +143,15 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="mt-10 flex items-center bg-white p-2.5 rounded-full w-full max-w-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] focus-within:ring-4 focus-within:ring-[#d9fc36]/40 transition-all hover:shadow-[0_15px_40px_rgba(217,252,54,0.25)]"
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleSearchSubmit}
         >
           <div className="pl-5 pr-3 text-muted-foreground">
             <Search className="w-6 h-6 text-gray-400" />
           </div>
           <input 
             type="text" 
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Course, topic, creator"
             className="flex-1 bg-transparent border-none outline-none text-[#0F172A] py-2 md:py-3 px-2 placeholder:text-gray-400 text-base font-medium"
           />
