@@ -84,14 +84,15 @@ export function ProfessionalGrowth() {
             {/* Floating Mini Course Card - Shifted to the right */}
             <motion.div
               style={{ y: floatY2 }}
-              className="absolute top-[8%] md:top-[12%] left-4 md:left-8 lg:left-2 z-10 bg-white p-3 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.08)] w-60 md:w-64 border border-gray-100 hover:scale-105 transition-transform duration-300 cursor-pointer"
+              className="absolute top-[8%] md:top-[12%] left-4 md:left-8 lg:left-2 z-10 bg-white p-3 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] w-60 md:w-64 border border-gray-100 hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-pointer group"
             >
               <div className="relative w-full h-32 md:h-36 rounded-xl overflow-hidden mb-3 bg-gray-100">
                 <Image
                   src="/courses/course1.jpg"
                   alt="Course Thumbnail"
                   fill
-                  className="object-cover"
+                  sizes="(max-width: 768px) 250px, 300px"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <h4 className="font-bold text-[15px] text-gray-900 leading-tight mb-1 truncate">
@@ -128,6 +129,7 @@ export function ProfessionalGrowth() {
                 src="/hero/hero1.png"
                 alt="Student learning"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                 className="object-contain object-bottom drop-shadow-2xl"
               />
             </motion.div>
@@ -141,6 +143,7 @@ export function ProfessionalGrowth() {
                 src="/icon/icon1.jpg"
                 alt="Decorative Shape"
                 fill
+                sizes="(max-width: 768px) 150px, 200px"
                 className="object-contain mix-blend-multiply drop-shadow-xl"
               />
             </motion.div>
@@ -148,7 +151,7 @@ export function ProfessionalGrowth() {
             {/* Floating Progress Card - Moved slightly up */}
             <motion.div
               style={{ y: floatY3 }}
-              className="absolute top-[42%] md:top-[40%] right-0 md:-right-12 z-30 bg-white p-4 md:p-5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.12)] w-52 md:w-60 border border-gray-50 hover:scale-105 transition-transform duration-300 cursor-pointer"
+              className="absolute top-[42%] md:top-[40%] right-0 md:-right-12 z-30 bg-white p-4 md:p-5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.12)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.2)] w-52 md:w-60 border border-gray-50 hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-pointer"
             >
               <div className="flex items-center justify-between mb-1">
                 <h4 className="text-xs md:text-sm text-gray-500 font-medium">

@@ -134,6 +134,7 @@ export function HeroSection() {
             src="/hero/hero1.png"
             alt="Student holding a laptop"
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 700px, 850px"
             priority
             className="object-contain object-bottom drop-shadow-2xl"
           />
