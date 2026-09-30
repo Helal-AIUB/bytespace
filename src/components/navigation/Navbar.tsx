@@ -9,7 +9,6 @@ import { ShoppingBag } from "lucide-react";
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Detect scroll to trigger the sticky glass effect
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -48,19 +47,25 @@ export function Navbar() {
 
         {/* Center Navigation Links */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-primary-foreground">
-          {["Home", "Courses", "Creators"].map((item) => (
-            <Link
-              key={item}
-              href={`/${item.toLowerCase() === "home" ? "" : item.toLowerCase()}`}
-              className="relative py-1 group overflow-hidden"
-            >
-              <span className="group-hover:text-accent transition-colors duration-300">
-                {item}
-              </span>
-              {/* Animated underline effect on hover */}
-              <span className="absolute left-0 bottom-0 w-full h-[2px] bg-accent -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-300" />
-            </Link>
-          ))}
+          {["Home", "Courses", "Creators"].map((item) => {
+            const itemLower = item.toLowerCase();
+            let href = "/";
+            if (itemLower === "courses") href = "/search";
+            if (itemLower === "creators") href = "/creators/1";
+
+            return (
+              <Link
+                key={item}
+                href={href}
+                className="relative py-1 group overflow-hidden"
+              >
+                <span className="group-hover:text-accent transition-colors duration-300">
+                  {item}
+                </span>
+                <span className="absolute left-0 bottom-0 w-full h-[2px] bg-accent -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-300" />
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Right Actions */}
@@ -77,7 +82,7 @@ export function Navbar() {
           >
             Join Us
           </Link>
-          <button className="p-2 hover:bg-white/20 rounded-full transition-colors relative group">
+          <button className="p-2 hover:bg-white/20 rounded-full transition-colors relative group cursor-pointer">
             <ShoppingBag className="w-5 h-5 group-hover:scale-110 transition-transform" />
           </button>
         </div>
